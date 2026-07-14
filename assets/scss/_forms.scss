@@ -292,14 +292,14 @@ body .gform_wrapper.gform_wrapper {
                             color: #0B0B0B;
                             text-transform: uppercase;
                             margin-bottom: 4px;
+                        }
 
-                            &::after {
-                                content: "*";
-                                color: var(--e-global-color-primary);
-                                margin-left: 4px;
-                                display: inline-block;
-                                transform: translateY(0.5px);
-                            }
+                        [aria-required="true"] + label::after {
+                            content: "*";
+                            color: var(--e-global-color-primary);
+                            margin-left: 4px;
+                            display: inline-block;
+                            transform: translateY(0.5px);
                         }
 
                         input,
