@@ -504,6 +504,158 @@ if (!function_exists('rp_render_back_to_top')) {
         <button type="button" id="rp-back-to-top" class="rp-back-to-top" aria-label="Back to top">
             <img src="<?php echo esc_url($icon); ?>" alt="" width="44" height="44">
         </button>
+    <?php
+    }
+}
+
+// Hook to show feature-image for CPT Products in Admin
+if (!function_exists('rp_add_product_thumbnail_column')) {
+    add_filter('manage_product_posts_columns', 'rp_add_product_thumbnail_column');
+    function rp_add_product_thumbnail_column($columns)
+    {
+        $new_columns = array();
+        foreach ($columns as $key => $label) {
+            $new_columns[$key] = $label;
+            if ('title' === $key) {
+                $new_columns['rp_feature_image'] = __('Feature Image', 'railpro');
+            }
+        }
+        return $new_columns;
+    }
+}
+
+if (!function_exists('rp_render_product_thumbnail_column')) {
+    add_action('manage_product_posts_custom_column', 'rp_render_product_thumbnail_column', 10, 2);
+    function rp_render_product_thumbnail_column($column, $post_id)
+    {
+        if ('rp_feature_image' !== $column) {
+            return;
+        }
+
+        if (has_post_thumbnail($post_id)) {
+            echo get_the_post_thumbnail($post_id, 'medium', array(
+                'class'   => 'rp-admin-product-thumb',
+                'alt'     => esc_attr(get_the_title($post_id)),
+                'loading' => 'lazy',
+            ));
+        } else {
+            echo '<span class="rp-admin-product-thumb rp-admin-product-thumb--placeholder">—</span>';
+        }
+    }
+}
+
+if (!function_exists('rp_admin_product_thumbnail_styles')) {
+    add_action('admin_head-edit.php', 'rp_admin_product_thumbnail_styles');
+    function rp_admin_product_thumbnail_styles()
+    {
+        $screen = get_current_screen();
+        if (!$screen || 'product' !== $screen->post_type) {
+            return;
+        }
+    ?>
+        <style>
+            .rp-admin-product-thumb {
+                display: inline-block;
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 4px;
+                border: 1px solid #dcdcde;
+                background: #f0f0f1;
+                image-rendering: -webkit-optimize-contrast;
+            }
+
+            .rp-admin-product-thumb--placeholder {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: #a7aaad;
+                font-size: 20px;
+            }
+        </style>
+<?php
+    }
+}
+
+// Hook to show feature-image + City/State for CPT Portfolio in Admin
+if (!function_exists('rp_add_portfolio_columns')) {
+    add_filter('manage_portfolio_posts_columns', 'rp_add_portfolio_columns');
+    function rp_add_portfolio_columns($columns)
+    {
+        $new_columns = array();
+        foreach ($columns as $key => $label) {
+            $new_columns[$key] = $label;
+            if ('title' === $key) {
+                $new_columns['rp_feature_image'] = __('Feature Image', 'railpro');
+                $new_columns['rp_city']          = __('City', 'railpro');
+                $new_columns['rp_state']         = __('State', 'railpro');
+            }
+        }
+        return $new_columns;
+    }
+}
+
+if (!function_exists('rp_render_portfolio_columns')) {
+    add_action('manage_portfolio_posts_custom_column', 'rp_render_portfolio_columns', 10, 2);
+    function rp_render_portfolio_columns($column, $post_id)
+    {
+        switch ($column) {
+            case 'rp_feature_image':
+                if (has_post_thumbnail($post_id)) {
+                    echo get_the_post_thumbnail($post_id, 'medium', array(
+                        'class'   => 'rp-admin-product-thumb',
+                        'alt'     => esc_attr(get_the_title($post_id)),
+                        'loading' => 'lazy',
+                    ));
+                } else {
+                    echo '<span class="rp-admin-product-thumb rp-admin-product-thumb--placeholder">—</span>';
+                }
+                break;
+
+            case 'rp_city':
+                $city = get_field('city', $post_id);
+                echo !empty($city) ? esc_html($city) : '—';
+                break;
+
+            case 'rp_state':
+                $state = get_field('state', $post_id);
+                echo !empty($state) ? esc_html($state) : '—';
+                break;
+        }
+    }
+}
+
+if (!function_exists('rp_admin_portfolio_styles')) {
+    add_action('admin_head-edit.php', 'rp_admin_portfolio_styles');
+    function rp_admin_portfolio_styles()
+    {
+        $screen = get_current_screen();
+        if (!$screen || 'portfolio' !== $screen->post_type) {
+            return;
+        }
+    ?>
+        <style>
+            .rp-admin-product-thumb {
+                display: inline-block;
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 4px;
+                border: 1px solid #dcdcde;
+                background: #f0f0f1;
+                image-rendering: -webkit-optimize-contrast;
+            }
+
+            .rp-admin-product-thumb--placeholder {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: #a7aaad;
+                font-size: 20px;
+            }
+        </style>
 <?php
     }
 }
