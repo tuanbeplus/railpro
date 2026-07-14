@@ -1,0 +1,284 @@
+// @import url(https://db.onlinewebfonts.com/c/31267e36af6f8dac65a56e78345e945e?family=Neue+Haas+Unica+W1G);
+// @import url(https://db.onlinewebfonts.com/c/7d349f3b93cd47712cf75443b05965bf?family=Neue+Haas+Unica+W1G+Medium);
+// @import url(https://db.onlinewebfonts.com/c/385c99faae5016a461bbe9b19c69885e?family=NeueHaasUnicaW1G-Bold);
+// @import url(https://db.onlinewebfonts.com/c/0953a445e522f69a6d8451e8988e9c79?family=Protipo);
+
+// @font-face {
+//   font-family: "Neue Haas Unica W1G";
+//   src: url("https://db.onlinewebfonts.com/t/31267e36af6f8dac65a56e78345e945e.eot");
+//   src:
+//     url("https://db.onlinewebfonts.com/t/31267e36af6f8dac65a56e78345e945e.eot?#iefix")
+//       format("embedded-opentype"),
+//     url("https://db.onlinewebfonts.com/t/31267e36af6f8dac65a56e78345e945e.woff2")
+//       format("woff2"),
+//     url("https://db.onlinewebfonts.com/t/31267e36af6f8dac65a56e78345e945e.woff")
+//       format("woff"),
+//     url("https://db.onlinewebfonts.com/t/31267e36af6f8dac65a56e78345e945e.ttf")
+//       format("truetype"),
+//     url("https://db.onlinewebfonts.com/t/31267e36af6f8dac65a56e78345e945e.svg#Neue Haas Unica W1G")
+//       format("svg");
+// }
+
+// @font-face {
+//   font-family: "Neue Haas Unica W1G Medium";
+//   src: url("https://db.onlinewebfonts.com/t/7d349f3b93cd47712cf75443b05965bf.eot");
+//   src:
+//     url("https://db.onlinewebfonts.com/t/7d349f3b93cd47712cf75443b05965bf.eot?#iefix")
+//       format("embedded-opentype"),
+//     url("https://db.onlinewebfonts.com/t/7d349f3b93cd47712cf75443b05965bf.woff2")
+//       format("woff2"),
+//     url("https://db.onlinewebfonts.com/t/7d349f3b93cd47712cf75443b05965bf.woff")
+//       format("woff"),
+//     url("https://db.onlinewebfonts.com/t/7d349f3b93cd47712cf75443b05965bf.ttf")
+//       format("truetype"),
+//     url("https://db.onlinewebfonts.com/t/7d349f3b93cd47712cf75443b05965bf.svg#Neue Haas Unica W1G Medium")
+//       format("svg");
+// }
+
+// @font-face {
+//   font-family: "Neue Haas Unica W1G Bold";
+//   src: url("https://db.onlinewebfonts.com/t/385c99faae5016a461bbe9b19c69885e.eot");
+//   src:
+//     url("https://db.onlinewebfonts.com/t/385c99faae5016a461bbe9b19c69885e.eot?#iefix")
+//       format("embedded-opentype"),
+//     url("https://db.onlinewebfonts.com/t/385c99faae5016a461bbe9b19c69885e.woff2")
+//       format("woff2"),
+//     url("https://db.onlinewebfonts.com/t/385c99faae5016a461bbe9b19c69885e.woff")
+//       format("woff"),
+//     url("https://db.onlinewebfonts.com/t/385c99faae5016a461bbe9b19c69885e.ttf")
+//       format("truetype"),
+//     url("https://db.onlinewebfonts.com/t/385c99faae5016a461bbe9b19c69885e.svg#NeueHaasUnicaW1G-Bold")
+//       format("svg");
+// }
+
+// @font-face {
+//   font-family: "Protipo";
+//   src: url("https://db.onlinewebfonts.com/t/0953a445e522f69a6d8451e8988e9c79.eot");
+//   src:
+//     url("https://db.onlinewebfonts.com/t/0953a445e522f69a6d8451e8988e9c79.eot?#iefix")
+//       format("embedded-opentype"),
+//     url("https://db.onlinewebfonts.com/t/0953a445e522f69a6d8451e8988e9c79.woff2")
+//       format("woff2"),
+//     url("https://db.onlinewebfonts.com/t/0953a445e522f69a6d8451e8988e9c79.woff")
+//       format("woff"),
+//     url("https://db.onlinewebfonts.com/t/0953a445e522f69a6d8451e8988e9c79.ttf")
+//       format("truetype"),
+//     url("https://db.onlinewebfonts.com/t/0953a445e522f69a6d8451e8988e9c79.svg#Protipo")
+//       format("svg");
+// }
+
+// @font-face {
+//   font-family: "Protipo Variable";
+//   src: url("https://db.onlinewebfonts.com/t/672d24f640d5212a720648f44b0c036a.eot");
+//   src:
+//     url("https://db.onlinewebfonts.com/t/672d24f640d5212a720648f44b0c036a.eot?#iefix")
+//       format("embedded-opentype"),
+//     url("https://db.onlinewebfonts.com/t/672d24f640d5212a720648f44b0c036a.woff2")
+//       format("woff2"),
+//     url("https://db.onlinewebfonts.com/t/672d24f640d5212a720648f44b0c036a.woff")
+//       format("woff"),
+//     url("https://db.onlinewebfonts.com/t/672d24f640d5212a720648f44b0c036a.ttf")
+//       format("truetype"),
+//     url("https://db.onlinewebfonts.com/t/672d24f640d5212a720648f44b0c036a.svg#Protipo Variable")
+//       format("svg");
+// }
+
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * inter-tight-variable:
+ *   - http://typekit.com/eulas/0000000000000000774ebcea
+ * Neue Haas Unica W1G:
+ *   - http://typekit.com/eulas/00000000000000007735bb02
+ *   - http://typekit.com/eulas/00000000000000007735bb04
+ *   - http://typekit.com/eulas/00000000000000007735bb07
+ *   - http://typekit.com/eulas/00000000000000007735bb0a
+ *   - http://typekit.com/eulas/00000000000000007735bb14
+ *   - http://typekit.com/eulas/00000000000000007735bb17
+ *   - http://typekit.com/eulas/00000000000000007735bb1b
+ *   - http://typekit.com/eulas/00000000000000007735bb1e
+ *   - http://typekit.com/eulas/00000000000000007735bb21
+ *   - http://typekit.com/eulas/00000000000000007735bb24
+ *   - http://typekit.com/eulas/00000000000000007735bb27
+ *   - http://typekit.com/eulas/00000000000000007735bb2a
+ * Protipo:
+ *   - http://typekit.com/eulas/00000000000000007735b722
+ *   - http://typekit.com/eulas/00000000000000007735b727
+ *   - http://typekit.com/eulas/00000000000000007735b72e
+ *   - http://typekit.com/eulas/00000000000000007735b736
+ *
+ * © 2009-2026 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2026-05-14 05:10:24 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=lbh7zzz&ht=tk&f=39510.39511.39512.39513.39516.39517.39518.39519.39520.39521.39522.39523.41693.41695.41697.41699.55316&a=19569648&app=typekit&e=css");
+
+@font-face {
+  font-family: "Neue Haas Unica W1G";
+  src:
+    url("https://use.typekit.net/af/4a8091/00000000000000007735bb02/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/4a8091/00000000000000007735bb02/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/4a8091/00000000000000007735bb02/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: Bold;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Unica W1G";
+  src:
+    url("https://use.typekit.net/af/4a8091/00000000000000007735bb02/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/4a8091/00000000000000007735bb02/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/4a8091/00000000000000007735bb02/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Unica W1G";
+  src:
+    url("https://use.typekit.net/af/deedd5/00000000000000007735bb07/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/deedd5/00000000000000007735bb07/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/deedd5/00000000000000007735bb07/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Unica W1G";
+  src:
+    url("https://use.typekit.net/af/98fb6b/00000000000000007735bb14/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/98fb6b/00000000000000007735bb14/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/98fb6b/00000000000000007735bb14/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Unica W1G";
+  src:
+    url("https://use.typekit.net/af/53408e/00000000000000007735bb1e/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/53408e/00000000000000007735bb1e/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/53408e/00000000000000007735bb1e/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Unica W1G";
+  src:
+    url("https://use.typekit.net/af/404934/00000000000000007735bb2a/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/404934/00000000000000007735bb2a/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/404934/00000000000000007735bb2a/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Unica W1G";
+  src:
+    url("https://use.typekit.net/af/404934/00000000000000007735bb2a/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/404934/00000000000000007735bb2a/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/404934/00000000000000007735bb2a/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Unica W1G";
+  src:
+    url("https://use.typekit.net/af/2a851a/00000000000000007735bb24/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/2a851a/00000000000000007735bb24/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/2a851a/00000000000000007735bb24/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Protipo";
+  src:
+    url("https://use.typekit.net/af/cc54a7/00000000000000007735b722/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/cc54a7/00000000000000007735b722/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/cc54a7/00000000000000007735b722/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Protipo";
+  src:
+    url("https://use.typekit.net/af/911e71/00000000000000007735b727/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/911e71/00000000000000007735b727/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/911e71/00000000000000007735b727/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Protipo";
+  src:
+    url("https://use.typekit.net/af/a3ee26/00000000000000007735b736/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/a3ee26/00000000000000007735b736/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/a3ee26/00000000000000007735b736/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+

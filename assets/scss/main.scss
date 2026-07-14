@@ -1,0 +1,520 @@
+:root {
+    --viewport-height: 100vh;
+}
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+body .elementor-element .e-con-inner {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+@media (max-width: 767px) {
+    body .elementor-element .e-con-inner {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@import 'fonts';
+
+// ===========================
+// Shared hover-border-10 mixin
+// ===========================
+// Adapts the hover-border-10 pattern for Elementor button structure:
+//   - Wrapper (btn-primary/btn-secondary) ::before = cross icon, ::after = left vertical border
+//   - .elementor-button ::before = top + right border, ::after = bottom border
+@mixin hover-border-animation($border-color) {
+    position: relative;
+
+    // Left border — drops from top-left downward
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 0%;
+        background: $border-color;
+        z-index: 2;
+        transition: height 0.25s 0.2s ease-out;
+    }
+
+    &:hover::after {
+        height: 100%;
+        transition: height 0.25s ease-in;
+    }
+
+    .elementor-button {
+        position: relative;
+        overflow: visible;
+
+        // Top border (sweeps L→R) + Right border (drops T→B)
+        &::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 1px;
+            width: 0%;
+            height: 0%;
+            border-top: 1px solid $border-color;
+            border-right: 1px solid $border-color;
+            z-index: 2;
+            opacity: 0;
+            transition: height 0.15s ease-in, width 0.2s 0.15s ease-in, opacity 0s 0.35s;
+        }
+
+        // Bottom border — sweeps L→R (arrives at bottom-right last)
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0%;
+            height: 0;
+            border-bottom: 1px solid $border-color;
+            z-index: 2;
+            opacity: 0;
+            transition: width 0.2s ease-in, opacity 0s 0.4s;
+        }
+    }
+
+    &:hover .elementor-button {
+
+        // Top sweeps right, then right border drops down
+        &::before {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: width 0.2s ease-out, height 0.15s 0.2s ease-out, opacity 0s;
+        }
+
+        // Bottom border sweeps right last — converges at bottom-right
+        &::after {
+            width: 100%;
+            opacity: 1;
+            transition: width 0.2s 0.25s ease-out, opacity 0s 0.25s;
+        }
+    }
+}
+
+// ===========================
+// Primary button
+// ===========================
+.btn-primary {
+    @include hover-border-animation(#00cb6a);
+    overflow: visible;
+
+    // Cross icon (top-left)
+    &::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        z-index: 3;
+        width: 10px;
+        height: 10px;
+        display: block;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyAKIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogd2lkdGg9IjlweCIgaGVpZ2h0PSI5cHgiPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiICBmaWxsPSJyZ2IoMCwgMjAzLCAxMDYpIgogZD0iTTQuOTAzLDguNTQ5IEw0LjkwMywwLjc4NCBMMy44NTksMC43ODQgTDMuODU5LDguNTQ5IEw0LjkwMyw4LjU0OSBaTTguMjU1LDUuMTk3IEw4LjI1NSw0LjEzNiBMMC40OTksNC4xMzYgTDAuNDk5LDUuMTk3IEw4LjI1NSw1LjE5NyBaIi8+Cjwvc3ZnPg==");
+    }
+}
+
+// ===========================
+// Secondary button
+// ===========================
+.btn-secondary {
+    @include hover-border-animation(#00cb6a);
+    overflow: visible;
+
+    // Cross icon (top-left)
+    &::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        z-index: 3;
+        width: 10px;
+        height: 10px;
+        display: block;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyAKIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogd2lkdGg9IjlweCIgaGVpZ2h0PSI5cHgiPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiICBmaWxsPSJyZ2IoMjU1LCAyNTUsIDI1NSkiCiBkPSJNNC45MDMsOC41NDkgTDQuOTAzLDAuNzg0IEwzLjg1OSwwLjc4NCBMMy44NTksOC41NDkgTDQuOTAzLDguNTQ5IFpNOC4yNTUsNS4xOTcgTDguMjU1LDQuMTM2IEwwLjQ5OSw0LjEzNiBMMC40OTksNS4xOTcgTDguMjU1LDUuMTk3IFoiLz4KPC9zdmc+");
+    }
+}
+
+// ===========================
+// Link button
+// ===========================
+.btn-link {
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        display: block;
+        background: linear-gradient(90deg, #50d797 0%, #107343 100%);
+        transition: all 0.3s;
+    }
+
+    &:hover:after {
+        width: 60px;
+    }
+}
+
+
+//Parallax hero
+.hero-parallax {
+    overflow: hidden;
+
+    &::before {
+        transform: scale(var(--parallax-scale, 1)) translateY(var(--parallax-y, 0)) !important;
+        transition: transform 0.4s cubic-bezier(0.1, 0.9, 0.2, 1) !important;
+        will-change: transform !important;
+    }
+}
+
+.rp-explore {
+    position: relative;
+    z-index: 1;
+
+    .rp-explore-left {
+        position: relative;
+        z-index: 10;
+    }
+
+    .rp-explore-right {
+        position: relative;
+        z-index: 1;
+        background: transparent;
+
+        .swiper {
+            margin-left: -400px !important;
+            padding-left: 400px !important;
+            background: transparent;
+        }
+
+        .swiper-wrapper {
+            padding-left: 25px !important;
+        }
+
+        .swiper-slide {
+            min-width: unset !important;
+        }
+
+        @media (max-width: 1200px) {
+            .swiper {
+                margin-left: -340px !important;
+                padding-left: 340px !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .swiper {
+                margin-left: 0 !important;
+                padding-left: 0 !important;
+            }
+            .swiper-wrapper {
+                padding-left: 0 !important;
+            }
+        }
+    }
+
+  
+}
+//Animaton hero
+// body.animation-addons-inactive {
+//     .hero-reveal {
+
+//         .reveal-line {
+//             overflow: hidden; 
+
+//             .elementor-heading-title {
+//                 display: inline-block;
+//                 transform: translateY(105%);
+//                 will-change: transform;
+//                 animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+//                 animation-delay: 0.2s;
+//             }
+
+
+//             &:nth-of-type(2) .elementor-heading-title {
+//                 animation-delay: 0.33s;
+//             }
+//         }
+
+     
+//         .reveal-text {
+//             transform: translateY(16px);
+//             opacity: 0;
+//             will-change: transform, opacity;
+//             animation: heroFadeUp 0.7s ease-out both;
+//             animation-delay: 0.5s;
+//         }
+
+
+//         .reveal-actions {
+//             overflow: visible;
+//             transform: translateY(16px);
+//             opacity: 0;
+//             will-change: transform, opacity;
+//             animation: heroFadeUp 0.7s ease-out both;
+//             animation-delay: 0.64s;
+//         }
+//     }
+// }
+
+// @keyframes heroReveal {
+//     0% {
+//         transform: translateY(105%);
+//     }
+//     100% {
+//         transform: translateY(0);
+//     }
+// }
+
+// @keyframes heroFadeUp {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(16px);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }
+@import 'header';
+@import 'home';
+@import 'company';
+@import 'product-features';
+@import 'product-gallery';
+@import 'customize-product';
+@import 'breadcrumbs';
+@import 'portfolio-filter';
+@import 'forms';
+@import 'table-of-content-all';
+@import 'back-to-top';
+
+body .elementor-widget-text-editor {
+    *:first-child {
+        margin-top: 0;
+    }
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        line-height: 1.2;
+    }
+
+    h3 {
+        color: #073220;
+        font-size: 1.375rem;
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    h4 {
+        font-size: 1.125rem;
+        @media (max-width: 768px) {
+            font-size: 1.05rem;
+        }
+    }
+
+    h5 {
+        font-size: 1.1rem;
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+    h6 {
+        font-size: 1rem;
+        @media (max-width: 768px) {
+            font-size: 0.95rem;
+        }
+    }
+
+    p {
+        font-size: 1.125rem;
+        line-height: 1.5;
+        color: #231f20;
+        margin: 24px 0;
+        @media (max-width: 768px) {
+            font-size: 1rem;
+            margin: 18px 0;
+        }
+    }
+
+    a {
+        color: #0B6B4B;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    ul,
+    ol {
+        padding-left: 1.125rem;
+        margin: 0;
+        @media (max-width: 768px) {
+            padding-left: 1rem;
+        }
+
+        ul,
+        ol {
+            margin-top: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1.125rem;
+            line-height: 1.5;
+            color: #231f20;
+            padding-left: 10px;
+            @media (max-width: 768px) {
+                font-size: 1rem;
+                margin-bottom: 8px;
+                padding-left: 8px;
+            }
+        }
+    }
+
+    blockquote {
+        margin: 3rem 0;
+        padding: 1.5rem 2rem;
+        border-left: 0.25rem solid #0B6B4B;
+        background: #F5F7F6;
+        font-size: 1.375rem;
+        line-height: 1.7;
+        font-style: italic;
+        border-radius: 0 1rem 1rem 0;
+        @media (max-width: 768px) {
+            margin: 2rem 0;
+            padding: 1rem 1.25rem;
+            font-size: 1.125rem;
+        }
+    }
+
+    img {
+        display: block;
+        height: auto;
+    }
+
+    figcaption {
+        margin-top: -1rem;
+        margin-bottom: 2rem;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        color: #666666;
+        text-align: center;
+        @media (max-width: 768px) {
+            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2.5rem 0;
+        overflow: hidden;
+        border-radius: 1rem;
+        @media (max-width: 768px) {
+            margin: 1.5rem 0;
+            display: block;
+            overflow-x: auto;
+            border-radius: 0.75rem;
+        }
+
+        th {
+            background: #F5F5F5;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        th,
+        td {
+            border: 1px solid #E5E5E5;
+            padding: 1rem;
+            font-size: 1rem;
+            line-height: 1.7;
+            @media (max-width: 768px) {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        background: #e4eee9;
+        margin: 3.125rem 0;
+        @media (max-width: 768px) {
+            margin: 2rem 0;
+        }
+    }
+
+    code {
+        background: #F4F4F4;
+        padding: 0.125rem 0.375rem;
+        border-radius: 0.375rem;
+        font-size: 0.95em;
+        font-family: monospace;
+    }
+
+    pre {
+        background: #111111;
+        color: #FFFFFF;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        overflow-x: auto;
+        margin: 2rem 0;
+        @media (max-width: 768px) {
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        code {
+            background: transparent;
+            padding: 0;
+            color: inherit;
+        }
+    }
+
+    iframe,
+    video {
+        width: 100%;
+        border: none;
+        border-radius: 1.25rem;
+        margin: 2.5rem 0;
+        @media (max-width: 768px) {
+            border-radius: 0.75rem;
+            margin: 1.5rem 0;
+        }
+    }
+}

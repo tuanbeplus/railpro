@@ -1,0 +1,317 @@
+// Breakpoints
+$bp-tablet: 1024px;
+$bp-tablet-sm: 768px;
+$bp-mobile: 480px;
+$bp-mobile-xs: 375px;
+
+// SVG Icon
+$_cross-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9px' height='9px'%3E%3Cpath fill-rule='evenodd' fill='%23073220' d='M4.903,8.549 L4.903,0.784 L3.859,0.784 L3.859,8.549 L4.903,8.549 ZM8.255,5.197 L8.255,4.136 L0.499,4.136 L0.499,5.197 L8.255,5.197 Z'/%3E%3C/svg%3E");
+
+
+// Tabs Hero
+.custom-tabs-autoplay .e-n-tabs {
+    .e-n-tab-title {
+        position: relative;
+        padding-top: 10px;
+
+        @media (max-width: $bp-tablet) {    
+            padding-top: 8px;
+        }
+
+        @media (max-width: $bp-tablet-sm) {
+            padding-top: 6px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #50d797 0%, #107343 100%);
+            pointer-events: none;
+        }
+
+        &.tab-autoplay-active::after {
+            animation: tab-progress var(--tabs-duration, 5s) linear forwards;
+        }
+    }
+
+    .e-n-tabs-content {
+        overflow: hidden;
+
+        >.elementor-element {
+            &::before {
+                will-change: transform;
+                backface-visibility: hidden;
+                animation: tab-bg-zoom 8s linear forwards;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg, #ffffff00 0%, #000000ca 100%);
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            .e-con-inner {
+                z-index: 10;
+            }
+        }
+    }
+}
+
+// Product Loop Carousel
+.product-card {
+    overflow: hidden;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            .product-image img {
+                transform: scale(1.05);
+            }
+
+            .product-content {
+                transform: translateY(0);
+            }
+
+            .product-arrow {
+                animation: productArrowFadeIn 0.35s forwards;
+            }
+        }
+    }
+
+    .product-image {
+        img {
+            transition: transform 1s ease;
+
+            @media (max-width: $bp-tablet) {
+                transition: transform 0.8s ease;
+            }
+        }
+    }
+
+    .product-content {
+        transform: translateY(90px);
+        transition: transform 0.4s ease;
+
+        @media (max-width: $bp-tablet) {
+            transform: translateY(60px);
+        }
+    }
+
+    .product-arrow {
+        animation: productArrowFadeOut 0.35s forwards;
+    }
+
+    @media (max-width: $bp-tablet-sm) {
+        .product-content {
+            transform: translateY(0);
+        }
+
+        .product-arrow {
+            opacity: 1;
+            animation: none;
+        }
+    }
+}
+
+// Portfolio Loop Carousel
+.portfolio-card {
+    overflow: hidden;
+
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            .portfolio-image img {
+                transform: scale(1.05);
+            }
+
+            .portfolio-content {
+                transform: translateY(0);
+            }
+
+            .portfolio-arrow {
+                opacity: 1;
+                animation: portfolioArrowFadeIn 0.35s forwards;
+            }
+        }
+    }
+
+    .portfolio-image {
+        img {
+            transition: transform 1s ease;
+
+            @media (max-width: $bp-tablet) {
+                transition: transform 0.8s ease;
+            }
+        }
+    }
+
+    .portfolio-content {
+        transform: translateY(90px);
+        transition: transform 0.4s ease;
+
+        @media (max-width: $bp-tablet) {
+            transform: translateY(60px);
+        }
+    }
+
+    .portfolio-arrow {
+        opacity: 0;
+        animation: portfolioArrowFadeOut 0.35s forwards;
+    }
+
+    @media (max-width: $bp-tablet-sm) {
+        .portfolio-content {
+            transform: translateY(0);
+        }
+
+        .portfolio-arrow {
+            opacity: 1;
+            animation: none;
+        }
+    }
+}
+
+// icon + on top-left
+body .elementor-element.stat-counter-tl {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        z-index: 3;
+        width: 10px;
+        height: 10px;
+        pointer-events: none;
+        background: $_cross-icon center / cover no-repeat;
+    }
+
+    @media (max-width: 480px) {
+        border-top-width: 0 !important;
+        border-bottom-width: 1px !important;
+
+        &::before {
+            top: unset;
+            bottom: -5px;
+        }
+    }
+}
+
+// icon + on bottom-left
+body .elementor-element.stat-counter-bl {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: -5px;
+        z-index: 3;
+        width: 10px;
+        height: 10px;
+        pointer-events: none;
+        background: $_cross-icon center / cover no-repeat;
+    }
+}
+
+// Stats grid — 1 column on mobile
+body .elementor-element.stats-grid {
+    @media (max-width: $bp-tablet) {
+        --e-con-grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    @media (max-width: $bp-mobile) {
+        --e-con-grid-template-columns: 1fr !important;
+    }
+}
+
+// Keyframes
+// Tabs Hero
+@keyframes tab-progress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes tab-bg-zoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes tab-inner-stable {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0.9259);
+    }
+}
+
+// Product Card
+@keyframes productArrowFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes productArrowFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// Portfolio Card
+@keyframes portfolioArrowFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes portfolioArrowFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

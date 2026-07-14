@@ -1,0 +1,160 @@
+$_4cross-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cg fill='%23073220'%3E%3Cpath transform='translate(0.5,0.5)' d='M4.903,8.549 L4.903,0.784 L3.859,0.784 L3.859,8.549 L4.903,8.549 ZM8.255,5.197 L8.255,4.136 L0.499,4.136 L0.499,5.197 L8.255,5.197 Z'/%3E%3Cpath transform='translate(10.5,0.5)' d='M4.903,8.549 L4.903,0.784 L3.859,0.784 L3.859,8.549 L4.903,8.549 ZM8.255,5.197 L8.255,4.136 L0.499,4.136 L0.499,5.197 L8.255,5.197 Z'/%3E%3Cpath transform='translate(0.5,10.5)' d='M4.903,8.549 L4.903,0.784 L3.859,0.784 L3.859,8.549 L4.903,8.549 ZM8.255,5.197 L8.255,4.136 L0.499,4.136 L0.499,5.197 L8.255,5.197 Z'/%3E%3Cpath transform='translate(10.5,10.5)' d='M4.903,8.549 L4.903,0.784 L3.859,0.784 L3.859,8.549 L4.903,8.549 ZM8.255,5.197 L8.255,4.136 L0.499,4.136 L0.499,5.197 L8.255,5.197 Z'/%3E%3C/g%3E%3C/svg%3E");
+
+
+$_border-color: rgba(10, 66, 43, 0.432);
+$_border-width: 200px;
+$_border-height: 250px;
+
+.elementor-element.railpro-corner-all {
+    position: relative !important;
+    overflow: visible !important;
+
+    @media (max-width: 495px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    border-style: solid;
+    border-width: 0;
+    border-image-source: $_4cross-icon;
+    border-image-slice: 10;
+    border-image-width: 10px;
+    border-image-outset: 5px;
+
+
+    background-image: linear-gradient(to right, $_border-color $_border-width, transparent $_border-width),
+    linear-gradient(to bottom, $_border-color $_border-height, transparent $_border-height),
+    linear-gradient(to left, $_border-color $_border-width, transparent $_border-width),
+    linear-gradient(to bottom, $_border-color $_border-height, transparent $_border-height),
+    linear-gradient(to right, $_border-color $_border-width, transparent $_border-width),
+    linear-gradient(to top, $_border-color $_border-height, transparent $_border-height),
+    linear-gradient(to left, $_border-color $_border-width, transparent $_border-width),
+    linear-gradient(to top, $_border-color $_border-height, transparent $_border-height);
+
+    background-position: top left,
+    top left,
+    top right,
+    top right,
+    bottom left,
+    bottom left,
+    bottom right,
+    bottom right;
+    
+    background-repeat: no-repeat;
+    background-size: $_border-width 1px,
+    1px $_border-height,
+    $_border-width 1px,
+    1px $_border-height,
+    $_border-width 1px,
+    1px $_border-height,
+    $_border-width 1px,
+    1px $_border-height;
+
+    @media (max-width: 1024px) {
+        background-size: 150px 1px,
+                         1px 200px,
+                         150px 1px,
+                         1px 200px,
+                         150px 1px,
+                         1px 200px,
+                         150px 1px,
+                         1px 200px;
+
+        background-image: linear-gradient(to right, $_border-color 150px, transparent 150px),
+                          linear-gradient(to bottom, $_border-color 200px, transparent 200px),
+                          linear-gradient(to left, $_border-color 150px, transparent 150px),
+                          linear-gradient(to bottom, $_border-color 200px, transparent 200px),
+                          linear-gradient(to right, $_border-color 150px, transparent 150px),
+                          linear-gradient(to top, $_border-color 200px, transparent 200px),
+                          linear-gradient(to left, $_border-color 150px, transparent 150px),
+                          linear-gradient(to top, $_border-color 200px, transparent 200px);
+    }
+
+    @media (max-width: 768px) {
+        background-size: 120px 1px,
+                         1px 80px,
+                         120px 1px,
+                         1px 80px,
+                         120px 1px,
+                         1px 80px,
+                         120px 1px,
+                         1px 80px;
+
+        background-image: linear-gradient(to right, $_border-color 120px, transparent 120px),
+                          linear-gradient(to bottom, $_border-color 80px, transparent 80px),
+                          linear-gradient(to left, $_border-color 120px, transparent 120px),
+                          linear-gradient(to bottom, $_border-color 80px, transparent 80px),
+                          linear-gradient(to right, $_border-color 120px, transparent 120px),
+                          linear-gradient(to top, $_border-color 80px, transparent 80px),
+                          linear-gradient(to left, $_border-color 120px, transparent 120px),
+                          linear-gradient(to top, $_border-color 80px, transparent 80px);
+    }
+
+}
+
+.rp-value-scroll {
+    --color-active: var(--e-global-color-secondary);
+    --color-inactive: var(--e-global-color-secondary);
+    --opacity-inactive: 0.35;
+    width: 100%;
+@media(max-width:767px){
+        margin-bottom: -15px;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        align-items: baseline;
+        gap: 0.25em;
+        font-size: 5rem;
+        font-weight: 600;
+        font-family: var(--e-global-typography-secondary-font-family);
+        line-height: 1.125;
+        margin: 0;
+        padding: 0;
+
+        @media (max-width: 1150px) {
+            font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+        }
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+            font-size: clamp(1rem, 7vw, 2.25rem);
+            
+        }
+    }
+
+    .rp-value-prefix {
+        flex-shrink: 0;
+        white-space: nowrap;
+        color: var(--color-active);
+        opacity: 0; 
+      
+    }
+
+    .rp-value-text {
+        color: var(--color-inactive);
+        opacity: var(--opacity-inactive);
+        transition: opacity 0.3s ease, color 0.3s ease;
+    }
+
+    li.is-active {
+        .rp-value-prefix {
+            opacity: 1;
+        }
+        .rp-value-text {
+            opacity: 1;
+            color: var(--color-active);
+        }
+    }
+
+    .elementor-editor-active & li:first-child {
+        .rp-value-prefix { opacity: 1; }
+        .rp-value-text { opacity: 1; color: var(--color-active); }
+    }
+}

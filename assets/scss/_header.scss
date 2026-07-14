@@ -1,0 +1,149 @@
+header.elementor-location-header[data-elementor-type="header"] {
+    .elementor-widget-n-menu .elementor-widget-container {
+        padding: 0 !important;
+    }
+    .submenu-extra {
+        margin-top: 0 !important;
+        transition: margin 0.3s ease;
+    }
+
+    .btn-primary {
+        .elementor-button {
+            @media(max-width:1115px){
+              padding: 18px 20px 18px 20px;
+            }   
+        }
+    }
+
+    .header-navmenu {
+        @media (max-width: 1115px) {
+            gap: 10px !important;
+        }
+    }
+
+    nav.e-n-menu {
+        .e-n-menu-wrapper{
+            ul.e-n-menu-heading{
+                    flex-wrap: nowrap;
+            li.e-n-menu-item{
+                .e-n-menu-title{
+                    .e-n-menu-title-text{
+                        @media(max-width:1115px){
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+            }
+        }
+        .e-n-menu-item {
+            .elementor-icon-list-text.current-page {
+                font-weight: 600;
+                position: relative;
+                display: inline-block;
+            }
+
+            .elementor-icon-list-text.current-page::after {
+                content: "" ;
+                position: absolute ;
+                left: 0 ;
+                bottom: 8px ;
+                width: 100% ;
+                height: 2px ;
+                background-color: #ffffff ;
+                display: block;
+                visibility: visible;
+                z-index: 10 ;
+            }
+        }
+    }
+    .socials-list {
+        flex-direction: row;
+        @media (max-width: 1024px) {
+            display: none !important;
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &.sticky {
+        .header-child {
+            border: none !important;
+        }
+        >.elementor-container,
+        >.e-con {
+            background-color: #fff !important;
+        }
+        .elementor-widget-n-menu {
+            padding-bottom: 0px;
+        }
+        .header-sticky-button {
+            gap: 0 !important;
+        }
+        .e-con-inner {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+        .submenu-extra {
+            padding-top: 36px;
+            padding-bottom: 36px;
+        }
+        .logo-img {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            transition: margin 0.3s ease;
+            img {
+                content: url('../imgs/railpro-logo-green.png') / "RailPro Logo" !important;
+                transform-origin: left center;
+                animation: logoZoomIn 0.3s ease-in-out forwards;
+            }
+        }
+
+        .e-n-menu-title-text {
+            color: #0B0B0B !important;
+            transition: all 0.3s ease;
+
+            &:hover,
+            &[aria-current="page"] {
+                color: #107042 !important;
+            }
+        }
+
+        [aria-current="page"] .e-n-menu-title-text,
+        .e-current .e-n-menu-title-text {
+            color: #107042 !important;
+        }
+
+        @media (max-width:1366px) {
+            .e-con-inner {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            .submenu-extra {
+                margin-top: 0 !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    header.elementor-location-header {
+        .elementor-element {
+            background-color: #fff !important;
+        }
+    }
+    .logo-img {
+        img {
+            content: url('../imgs/railpro-logo-green.png') !important;
+        }
+    }
+}
+
+@keyframes logoZoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0.84);
+    }
+}

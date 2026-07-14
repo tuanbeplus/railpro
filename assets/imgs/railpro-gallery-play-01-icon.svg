@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 70 70">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="35" cy="35" r="35"/>
+  <image id="play-button-arrowhead" x="26" y="22" width="24" height="26" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAaCAYAAACtv5zzAAABTUlEQVRIibXWTUtUURzH8c+Y7QfrJUShICIE4bIhyIeta/c+BFP4AqQXEFii4FsQBPFpXOjKvYRSVK5cuAoJIVoMhpw4F2Rwmrlz7/ku7z3n9+V//oc/p1Kt16rYwCuc4xPW0FQCfViM4YEnWMYZJsoSvLjn+1PsYR+DRQUP//N/HKf4iIFeBZ14gDf4gXn0ly3ICBWs4DNepxBkDKGBndir0gUZU/G2fUA1hUC8IG9jf2Zjv0oVZDzGKk5QSyHIGMZhnAyPUggyprGNSipBYAzPUgp+4zKV4A9mcJ1CsBWbvSnvXOlAGIp1HN1dVkYFPzGH0dZwBStoxuH3Hr/aLepVsIt3+N5pYV7Blxh80O2GbntwhQWM5AnXRQU3cYgtRUluguCizaZGPI6vvQRnhCNab3kDfcNkfLYUCg+ECo7xHC/jrQhn/Ldo8D9wC7VlOX1tCkilAAAAAElFTkSuQmCC"/>
+</svg>
