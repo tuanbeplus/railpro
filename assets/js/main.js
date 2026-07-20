@@ -430,7 +430,7 @@
 
             var $list = $toc.find('.table-of-content-all__list');
 
-            // Determine search root (body or custom container)
+            // Determine search root
             var $root = $('body');
             if (containerSel) {
                 var $container = $(containerSel).first();
@@ -460,6 +460,9 @@
 
                 // Skip headings inside the TOC widget itself
                 if ($h.closest('.table-of-content-all').length) return;
+
+                if ($h.closest('.elementor-hidden-desktop.elementor-hidden-tablet.elementor-hidden-mobile').length) return;
+                if (!$h.is(':visible')) return;
 
                 var text = $h.text().trim();
                 if (!text) return;
