@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-define('RP_THEME_VER', '1.0.0' . time());
+define('RP_THEME_VER', '1.1.0');
 
 /**
  * Enqueue styles and scripts
@@ -435,36 +435,7 @@ function rp_maybe_hide_gallery_button($should_render, $widget)
     return $should_render;
 }
 
-// // Detect if Animation Addons for Elementor is active
-// add_filter( 'body_class', 'rp_detect_animation_addons_plugin' );
-// function rp_detect_animation_addons_plugin( $classes ) {
-//     $active_plugins = (array) get_option( 'active_plugins', [] );
-//     $is_active = false;
-//     foreach ( $active_plugins as $plugin ) {
-//         if ( strpos( $plugin, 'animation-addons-for-elementor' ) !== false ) {
-//             $is_active = true;
-//             break;
-//         }
-//     }
-//     if ( is_multisite() && !$is_active ) {
-//         $network_active = (array) get_site_option( 'active_sitewide_plugins', [] );
-//         foreach ( array_keys( $network_active ) as $plugin ) {
-//             if ( strpos( $plugin, 'animation-addons-for-elementor' ) !== false ) {
-//                 $is_active = true;
-//                 break;
-//             }
-//         }
-//     }
-
-//     if ( $is_active ) {
-//         $classes[] = 'animation-addons-active';
-//     } else {
-//         $classes[] = 'animation-addons-inactive';
-//     }
-//     return $classes;
-// }
-
-// Shortcode hiển thị tiêu đề động cho phần Feature sản phẩm
+// Dynamic title for Feature Product
 add_shortcode('rp_product_features_title', 'rp_get_product_features_title');
 function rp_get_product_features_title()
 {
